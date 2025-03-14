@@ -5,30 +5,30 @@ Data Management Project comparing T-SNE and UMAP Algorithm to visualize music da
 
 ## Installation
 
-Dieses Projekt wurde auf einem Linux-basierten System entwickelt, daher ist die folgende Anleitung speziell für Linux-Umgebungen geeignet.
+This project was developed on a Linux-based system, so the following instructions are specifically for Linux environments.
 
-### Installation von PostgreSQL
-Zur Installation von PostgreSQL kann folgender Befehl ausgeführt werden:
+### Installing PostgreSQL
+To install PostgreSQL, run the following command:
 ```sh
 sudo apt-get install postgresql
 ```
 
-### Installation von PGVector
-Um die Erweiterung PGVector für PostgreSQL zu nutzen, wird zunächst ein Docker-Image heruntergeladen und dann ein Docker-Container erstellt:
+### Installing PGVector
+To use the PGVector extension for PostgreSQL, first download the Docker image and then create a Docker container:
 ```sh
 docker pull ankane/pgvector
 sudo docker run -e POSTGRES_PASSWORD=PW -p 5432:5432 ankane/pgvector
 ```
-Danach kann die Erweiterung in PGAdmin hinzugefügt werden.
+After that, the extension can be added in PGAdmin.
 
-### Klonen des GitHub-Repositories
-Das Projekt kann mit folgendem Befehl geklont werden:
+### Cloning the GitHub Repository
+The project can be cloned using the following command:
 ```sh
 git clone https://github.com/ToniGGR/Data_Management_UMAP_TSNE.git
 ```
 
-### Installation von PGAdmin
-Zur Installation von PGAdmin werden folgende Schritte ausgeführt:
+### Installing PGAdmin
+To install PGAdmin, execute the following steps:
 ```sh
 sudo mkdir /var/lib/pgadmin
 sudo mkdir /var/log/pgadmin
@@ -40,44 +40,43 @@ pip install pgadmin4
 pgadmin4
 ```
 
-### Einrichten eines virtuellen Environments
-Ein virtuelles Environment wird mit folgendem Befehl erstellt:
+### Setting Up a Virtual Environment
+A virtual environment can be created using:
 ```sh
 python -m venv venv
 ```
-Das Environment kann dann mit:
+Activate it with:
 ```sh
 source venv/bin/activate
 ```
-gestartet werden.
 
-### Installation der Bibliotheken
-Alle erforderlichen Bibliotheken können durch die Datei `requirements.txt` mit folgendem Befehl installiert werden:
+### Installing Dependencies
+All required dependencies can be installed using the `requirements.txt` file with:
 ```sh
 pip install -r /path/to/requirements.txt
 ```
 
-### Einrichten der Benutzer-Credentials
-Eine `.env`-Datei muss erstellt werden und folgende Struktur aufweisen:
+### Configuring User Credentials
+A `.env` file must be created with the following structure:
 ```ini
 postgres_user='your_user'
 postgres_pw='your_pw'
 ```
 
-## Datengrundlage
-Die Datengrundlage besteht aus einem von Kaggle heruntergeladenen Datensatz, der als CSV-Datei gespeichert wurde und im Verzeichnis `/data` abgelegt ist.
+## Data Source
+The dataset used is downloaded from Kaggle, saved as a CSV file, and placed in the `/data` directory.
 
-## Datenbankkonfiguration
-Damit die Datenbank korrekt eingerichtet werden kann, muss die PGVector-Erweiterung installiert und in PGAdmin aktiviert sein. Die erforderliche Datenbank `project_vector` wird durch das folgende Python-Skript mit den notwendigen Tabellen gefüllt:
+## Database Configuration
+To set up the database, the PGVector extension must be installed and activated in PGAdmin. The required database `project_vector` is initialized and populated by running the following Python script:
 ```sh
 python code/fill_table.py
 ```
-**Wichtig:** PGAdmin darf erst gestartet und mit der Datenbank verbunden werden, nachdem das Skript durchgelaufen ist.
+**Important:** PGAdmin should only be started and connected to the database after the script has completed execution.
 
 ## Jupyter Notebooks
-Nach der Einrichtung der Datenbank können die folgenden Notebooks im Verzeichnis `code/` ausgeführt werden:
+After setting up the database, the following notebooks in the `code/` directory can be executed:
 - `UMAP.ipynb`
 - `TSNE.ipynb`
 
-Erst nach dem erfolgreichen Durchlauf beider Notebooks können die Daten im `Analysis.ipynb` Notebook analysiert werden.
+Only after successfully running both notebooks should the data be analyzed in `Analysis.ipynb`.
 
