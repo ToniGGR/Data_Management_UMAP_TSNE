@@ -135,6 +135,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+pgadmin4/
+code/ipynb_checkpoints
+code/mypy_chache
 
 # Spyder project settings
 .spyderproject
@@ -172,3 +175,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+documentation.txt
+*.bib
