@@ -3,6 +3,19 @@ Data Management Project comparing T-SNE and UMAP Algorithm to visualize music da
 
 # README
 
+## Table of Contents
+1. [Installation](#installation)
+   - [Installing PostgreSQL](#installing-postgresql)
+   - [Installing PGVector](#installing-pgvector)
+   - [Cloning the GitHub Repository](#cloning-the-github-repository)
+   - [Installing PGAdmin](#installing-pgadmin)
+   - [Setting Up a Virtual Environment](#setting-up-a-virtual-environment)
+   - [Installing Dependencies](#installing-dependencies)
+   - [Configuring User Credentials](#configuring-user-credentials)
+2. [Data Source](#data-source)
+3. [Database Configuration](#database-configuration)
+4. [Jupyter Notebooks](#jupyter-notebooks)
+
 ## Installation
 
 This project was developed on a Linux-based system, so the following instructions are specifically for Linux environments.
