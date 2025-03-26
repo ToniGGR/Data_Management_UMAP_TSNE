@@ -30,6 +30,7 @@ sudo apt-get install postgresql
 To use the PGVector extension for PostgreSQL, first download the Docker image and then create a Docker container:
 ```sh
 docker pull ankane/pgvector
+sudo ss -lptn 'sport = :5432' # Kill Process if port already blocked
 sudo docker run -e POSTGRES_PASSWORD=PW -p 5432:5432 ankane/pgvector
 ```
 After that, the extension can be added in PGAdmin.
