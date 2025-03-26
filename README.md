@@ -1,6 +1,8 @@
 # Data_Management_UMAP_TSNE
 Data Management Project comparing T-SNE and UMAP Algorithm to visualize music data
 
+# License
+CC0: Public Domain
 # README
 
 ## Table of Contents
